@@ -3,16 +3,27 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { AccueilComponent } from './accueil/accueil.component';
+import { ListeComponent } from './liste/liste.component';
+import { AjouterComponent } from './ajouter/ajouter.component';
+import { MenuComponent } from './menu/menu.component';
+import { TrucServiceService } from 'src/app/services/truc-service.service';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AccueilComponent,
+    ListeComponent,
+    AjouterComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    TrucServiceService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
