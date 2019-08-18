@@ -1,3 +1,69 @@
-<p>
-  ajouter works!
-</p>
+<h1 class="text-center mt-3">Ajouter un truc :</h1>
+
+<div class="row justify-content-center mt-5">
+
+  <div class="col-3 border border-secondary bg-primary">
+
+    <form [formGroup]="trucForm" (ngSubmit)="ajouterTruc()" class="mx-3">
+
+      <div>
+        <label
+          class="form-label mt-3 font-weight-bold"
+          for="nom"
+        >
+          Nom :
+        </label>
+        <input
+          type="text"
+          class="form-control col-12"
+          id="nom"
+          name="nom"
+          formControlName="nom"
+        />
+      </div>
+
+      <div>
+        <label
+          class="form-label mt-3 font-weight-bold"
+          for="couleur"
+        >
+          Couleur :
+        </label>
+        <input
+          type="text"
+          class="form-control col-6"
+          id="couleur"
+          name="couleur"
+          formControlName="couleur"
+        />
+      </div>
+
+      <div>
+        <label
+          class="form-label mt-3 font-weight-bold"
+          for="prix"
+        >
+          Prix :
+        </label>
+        <input
+          type="number"
+          class="form-control col-3"
+          id="prix"
+          name="prix"
+          formControlName="prix"
+        />
+      </div>
+        
+      <button
+        type="submit"
+        class="btn btn-success mt-5 mb-3"
+        [disabled]="trucForm.invalid"
+      >
+        Ajouter ce truc
+      </button>
+
+    </form>
+
+  </div>
+
+</div>
