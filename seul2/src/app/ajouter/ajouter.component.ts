@@ -36,7 +36,6 @@ export class AjouterComponent implements OnInit {
     for (const idATrier of this.listeTrucs) {
       idMaxStock.push(idATrier.id);
     }
-    console.log('!! : ', idMaxStock);
     const idMax = Math.max(...idMaxStock);
     return idMax;
   }
