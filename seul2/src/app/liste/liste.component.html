@@ -1,3 +1,58 @@
-<p>
-  liste works!
-</p>
+<h1 class="text-center mt-3">Liste des trucs :</h1>
+
+<div *ngIf="listeTrucs.length !== 0">
+
+  <div class="row justify-content-center mx-5 my-3">
+    <table class="table table-striped">
+
+      <thead class="text-center thead-dark">
+        <tr>
+          <th scope="col" class="col-1">Id</th>
+          <th scope="col" class="col-3">Nom</th>
+          <th scope="col" class="col-3">Couleur</th>
+          <th scope="col" class="col-2">Prix</th>
+          <th scope="col" class="col-2">Reste</th>
+          <th scope="col" class="col-1">Suppr.</th>
+        </tr>
+      </thead>
+
+      <tbody class="text-center">
+        <ng-container *ngFor="let truc of listeTrucs">
+          <tr>
+            <td scope="col">{{truc.id + 1}}</td>
+            <td scope="col">{{truc.nom}}</td> 
+            <td scope="col">{{truc.couleur}}</td>
+            <td scope="col">{{truc.prix}}</td>
+            <td scope="col">{{truc.stock}}</td>
+            <td scope="col">
+              <button
+                class="btn btn-danger btn-sm"
+                (click)="supprimer(truc)"
+              >
+                X
+              </button>
+            </td>
+          </tr>
+        </ng-container>
+      </tbody>
+
+    </table>
+  </div>
+
+  <!-- pagination de Angular bootstrap -->
+  <!-- <div *ngIf="listeTrucs.length > 7">
+    <ngb-pagination
+      class="d-flex justify-content-center"
+      [(page)]="page"
+      [pageSize]="pageSize"
+      [collectionSize]="listeRestaurants.length"
+      [rotate]="true"
+      [boundaryLinks]="true"
+    >
+    </ngb-pagination>
+  </div> -->
+
+</div>
+<div *ngIf="listeTrucs.length === 0" class="text-center mt-5">
+  <i>Pas de truc disponible pour le moment ...</i>
+</div>
