@@ -22,10 +22,7 @@ export class ListeComponent implements OnInit {
   ngOnInit() {
     const observExemple$ = of(this.listeTrucs);
     let tableauTruc;
-    console.log('1 : ', observExemple$);
     const resultObs = observExemple$.subscribe((x) => tableauTruc = x);
-    console.log('2 : ', resultObs);
-    console.log('3 : ', tableauTruc);
     resultObs.unsubscribe();
   }
 
